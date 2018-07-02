@@ -1,0 +1,24 @@
+{
+  "name": "course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmakovyak/node-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmakovyak/node-course/issues"
+  },
+  "homepage": "https://github.com/rmakovyak/node-course#readme",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "nodemon": "^1.17.5",
+    "yargs": "^12.0.1"
+  }
+}
