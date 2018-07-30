@@ -1,12 +1,22 @@
-const request = require('request');
+const yargs = require('yargs');
 
-request(
-  {
-    url:
-      'http://maps.googleapis.com/maps/api/geocode/json?address=10407%20Berlin%20Danziger%20132',
-    json: true
-  },
-  (error, response, body) => {
-    console.log(JSON.stringify(body, null, 2));
-  }
-);
+const geocodeAddress = require('./geocode/geocodeAddress.js');
+
+const argv = yargs
+  .options({
+    a: {
+      demand: true,
+      alias: 'address',
+      describe: 'Address to fetch weather for',
+      string: true,
+    },
+  })
+  .help().argv;
+
+geocodeAddress(argv.address)
+  .then((response) => {
+    console.log(JSON.stringify(response, undefined, 2));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
