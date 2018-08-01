@@ -1,6 +1,7 @@
 const yargs = require('yargs');
 
 const geocodeAddress = require('./geocode/geocodeAddress.js');
+const getForecast = require('./forecast/getForecast');
 
 const argv = yargs
   .options({
@@ -15,7 +16,7 @@ const argv = yargs
 
 geocodeAddress(argv.address)
   .then((response) => {
-    console.log(JSON.stringify(response, undefined, 2));
+    getForecast(response.location);
   })
   .catch((error) => {
     console.log(error);
